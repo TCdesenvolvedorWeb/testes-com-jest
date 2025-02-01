@@ -1,0 +1,16 @@
+{
+  "name": "revendo-dnv",
+  "version": "1.0.0",
+  "main": "cauculando-valor.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
