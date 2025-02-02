@@ -1,16 +1,16 @@
-const meuPedido = {
-  itens: [
-    { nome: "Poção de cura", valor: 2000 },
-    { nome: "Espada de prata", valor: 200 },
-    { nome: "Entrega", valor: 40, entrega: true },
-  ],
-};
+const acrescidoValorEntrega = 0.2;
 
 const caulcularValorPedido = (pedido) => {
-  const valorProdutos = pedido.itens.filter((item) => !item.entrega)
-  .reduce((totalPedidos, pedidoAtual) => totalPedidos + pedidoAtual.valor, 0);
+  const valorProdutos = pedido.itens
+    .filter((item) => !item.entrega)
+    .reduce((totalPedidos, pedidoAtual) => totalPedidos + pedidoAtual.valor, 0);
 
   const entrega = pedido.itens.filter((item) => item.entrega);
+
+  if (pedido.estado === "RS" || pedido.estado === 'SC') {
+    const acrescimoEntrega = entrega[0].valor * acrescidoValorEntrega;
+    entrega[0].valor += acrescimoEntrega;
+  }
 
   return valorProdutos > 500 ? valorProdutos : valorProdutos + entrega[0].valor;
 };
