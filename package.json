@@ -1,10 +1,10 @@
 {
-  "name": "revendo-dnv",
+  "name": "testes-com-jest",
   "version": "1.0.0",
-  "main": "cauculando-valor.js",
+  "main": "calcular-valor-pedido.js",
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch "
+    "watch": "jest --watch *.js"
   },
   "keywords": [],
   "author": "",
